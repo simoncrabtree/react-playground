@@ -1,8 +1,9 @@
 var React = require('react');
 
-var HelloWorld = require('./components/helloWorld.jsx');
+var ShoppingList = require('./components/ShoppingList.jsx');
+var shoppingListItems = [{description: "Bacon"}, {description: "Eggs"}, {description: "Sausages"}];
 
 React.render(
-	<HelloWorld name="Simon"/>,
+	<ShoppingList items={shoppingListItems}/>,
 	document.getElementById('application')
 )
