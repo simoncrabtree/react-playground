@@ -22,7 +22,10 @@ module.exports = React.createClass({
 	render: function () {
 		return (
 			<div>
+				<div>({this.state.items.length}) Items</div>
+				<ul>
 				{this.renderShoppingListItems()}
+				</ul>
 			</div>
 		)
 	}

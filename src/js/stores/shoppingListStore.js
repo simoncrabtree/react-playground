@@ -18,6 +18,6 @@ setInterval(function () {
 
 	shoppingListStore.items.push(possibleItems[shoppingListStore.items.length]);
 	shoppingListStore.emit('change');
-}, 5000);
+}, 2000);
 
 module.exports = shoppingListStore;
