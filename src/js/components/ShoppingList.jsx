@@ -2,15 +2,27 @@ var React = require('react');
 var ShoppingListItem = require('./ShoppingListItem.jsx');
 
 module.exports = React.createClass({
-	render: function () {
-		var shoppingListItems = [];
-		this.props.items.forEach(function (item) {
-			shoppingListItems.push(<ShoppingListItem description={item.description} />)
+	update: function () {
+		this.setState({
+			items: this.props.store.items
 		});
+	},
 
+	componentWillMount: function () {
+		this.update();
+		this.props.store.on('change', this.update);
+	}, 
+
+	renderShoppingListItems: function () {
+		return this.state.items.map(function (item) {
+			return <ShoppingListItem description={item.description} />
+		});
+	},
+
+	render: function () {
 		return (
 			<div>
-				{shoppingListItems}
+				{this.renderShoppingListItems()}
 			</div>
 		)
 	}
