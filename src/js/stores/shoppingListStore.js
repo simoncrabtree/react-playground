@@ -1,12 +1,12 @@
 var EventEmitter = require('events').EventEmitter;
 var possibleItems = [
-	{description: "Bacon"},
-	{description: "Eggs"},
-	{description: "Sausages"},
-	{description: "Chicken"},
-	{description: "Frozen Peas"},
-	{description: "Fish Fingers"},
-	{description: "Baked Beans"},
+	{key: "1", description: "Bacon"},
+	{key: "2", description: "Eggs"},
+	{key: "3", description: "Sausages"},
+	{key: "4", description: "Chicken"},
+	{key: "5", description: "Frozen Peas"},
+	{key: "6", description: "Fish Fingers"},
+	{key: "7", description: "Baked Beans"},
 ];
 var shoppingListStore = new EventEmitter;
 
@@ -18,6 +18,6 @@ setInterval(function () {
 
 	shoppingListStore.items.push(possibleItems[shoppingListStore.items.length]);
 	shoppingListStore.emit('change');
-}, 2000);
+}, 500);
 
 module.exports = shoppingListStore;

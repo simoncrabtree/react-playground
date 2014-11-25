@@ -6,6 +6,7 @@ module.exports = React.createClass({
 		this.setState({
 			items: this.props.store.items
 		});
+		console.log("update", this.props.store.items);
 	},
 
 	componentWillMount: function () {
@@ -15,7 +16,7 @@ module.exports = React.createClass({
 
 	renderShoppingListItems: function () {
 		return this.state.items.map(function (item) {
-			return <ShoppingListItem description={item.description} />
+			return <ShoppingListItem item={item} />
 		});
 	},
 
