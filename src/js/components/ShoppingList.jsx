@@ -4,9 +4,6 @@ var ShoppingListItem = require('./ShoppingListItem.jsx');
 
 module.exports = React.createClass({
   update: function () {
-    if(!this.isMounted())
-      return;
-
     this.setState({
       items: shoppingListStore.items
     });
