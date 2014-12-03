@@ -1,8 +1,10 @@
 var React = require('react');
 var shoppingListStore = require('../stores/shoppingListStore');
 var ShoppingListItem = require('./ShoppingListItem.jsx');
-
+var Alert = require('react-bootstrap').Alert;
+  
 module.exports = React.createClass({
+
   update: function () {
     this.setState({
       items: shoppingListStore.items
